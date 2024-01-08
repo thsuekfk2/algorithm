@@ -1,30 +1,33 @@
-const [N, K] = require("fs")
-  .readFileSync("/dev/stdin")
+const filePath = process.platform === "linux" ? "/dev/stdin" : "input.txt";
+const input = require("fs")
+  .readFileSync(filePath)
   .toString()
   .trim()
-  .split(" ")
-  .map(Number);
+  .split("\n");
 
-const queue = [[N, 0]];
-const visited = Array(100001).fill(false);
+const [N, K] = input.shift().split(" ").map(Number);
+const visited = Array(100001).fill(0);
 
-while (queue.length) {
-  const [cur, depth] = queue.shift();
+let ans = 0;
 
-  if (visited[cur]) {
-    continue;
-  }
+// BFS
+const bfs = () => {
+  const queue = [[N, 0]];
+  visited[N] = true;
 
-  visited[cur] = true;
+  while (queue.length) {
+    const [now, depth] = queue.shift();
 
-  if (cur === K) {
-    console.log(depth);
-    break;
-  }
+    if (now === K) return depth;
 
-  for (let next of [cur + 1, cur - 1, cur * 2]) {
-    if (!visited[next] && next >= 0 && next <= 100000) {
-      queue.push([next, depth + 1]);
+    for (let nx of [now + 1, now - 1, now * 2]) {
+      if (nx >= 0 && nx <= 100000 && visited[nx] === 0) {
+        visited[nx] = true;
+        queue.push([nx, depth + 1]);
+      }
     }
   }
-}
+};
+
+ans = bfs();
+console.log(ans);
