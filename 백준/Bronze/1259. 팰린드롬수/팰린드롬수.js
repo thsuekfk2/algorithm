@@ -1,8 +1,12 @@
-let fs = require("fs");
-let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
-input.pop(); //0이 포함되지 않는다고 나와있기에 마지막꺼 빼기
+const filePath = process.platform === "linux" ? "/dev/stdin" : "input.txt";
+const input = require("fs")
+  .readFileSync(filePath)
+  .toString()
+  .trim()
+  .split("\n");
 
+input.pop();
 for (let i = 0; i < input.length; i++) {
-    let reverseStr = input[i].split("").reverse().join("");
-    console.log(input[i] === reverseStr ? "yes" : "no");
+  let reverse = input[i].split("").reverse().join("");
+  console.log(input[i] === reverse ? "yes" : "no");
 }
