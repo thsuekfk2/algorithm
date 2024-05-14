@@ -1,14 +1,14 @@
 const fs = require("fs");
-const filePath = process.platform === "linux" ? "/dev/stdin" : "input.txt";
-let input = fs.readFileSync(filePath).toString().trim();
+const filePath = process.platform === "linux" ? "/dev/stdin" : "예제.txt";
+let input = fs.readFileSync(filePath).toString();
 
-let alphabet = Array(26).fill(-1);
-let inputArray = input.split("");
+const alphabetArray = Array.from({ length: 26 }, () => -1);
 
-inputArray.forEach((data, i) => {
-  if (alphabet[data.charCodeAt(0) - 97] === -1) {
-    alphabet[data.charCodeAt(0) - 97] = i;
+for (let i = 0; i < input.length; i++) {
+  let index = input[i].charCodeAt(0) - 97;
+  if (alphabetArray[index] === -1) {
+    alphabetArray[index] = i;
   }
-});
+}
 
-console.log(alphabet.join(" "));
+console.log(alphabetArray.join(" "));
