@@ -1,13 +1,12 @@
 const fs = require("fs");
-const filePath = process.platform === "linux" ? "/dev/stdin" : "input.txt";
-let input = fs.readFileSync(filePath).toString().trim();
+const filePath = process.platform === "linux" ? "/dev/stdin" : "예제.txt";
+let input = fs.readFileSync(filePath).toString();
 
-let alphabet = Array(26).fill(0);
-let inputArray = input.split("");
+const alphabetArray = Array.from({ length: 26 }, () => 0);
 
-inputArray.forEach((data, i) => {
-  let count = parseInt(alphabet[data.charCodeAt(0) - 97]);
-  alphabet[data.charCodeAt(0) - 97] = count + 1;
-});
+for (let i = 0; i < input.length; i++) {
+  let index = input[i].charCodeAt(0) - 97;
+  alphabetArray[index] += 1;
+}
 
-console.log(alphabet.join(" "));
+console.log(alphabetArray.join(" "));
