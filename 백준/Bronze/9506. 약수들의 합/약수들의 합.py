@@ -1,16 +1,10 @@
 while True:
   n = int(input())
-  if n==-1:
+  if n == -1:
     break
-  list =[]
-  for i in range(1,n):
-    if n%i==0:
-      list.append(i)
-  sum= 0
-  for i in list:
-    sum+=i
-  if sum == n :
-    print(n,"="," + ".join(map(str,list)),end="\n")
+  divisors = [i for i in range(1, n) if n % i == 0]
+  divisor_sum = sum(divisors)
+  if divisor_sum == n:
+    print(f"{n} = {' + '.join(map(str, divisors))}")
   else:
-    print(n,"is NOT perfect.",end="\n")
-  list=[]
+    print(f"{n} is NOT perfect.")
