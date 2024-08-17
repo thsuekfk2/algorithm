@@ -1,16 +1,20 @@
-from sys import stdin
-from collections import defaultdict
 
-N, W = list(map(int, stdin.readline().split()))
-tree = defaultdict(list)
-for i in range(N-1):
-    u, v = list(map(int, stdin.readline().split()))
-    tree[u].append(v)
-    tree[v].append(u)
+import sys
+input = sys.stdin.readline
+
+n, w = map(int, input().split())
+
+graph = [[] for _ in range(n + 1)]
+
+for _ in range(n - 1):
+    a, b = map(int, input().split())
+    graph[a].append(b)
+    graph[b].append(a)
 
 leaf_count = 0
-for root, nodes in tree.items():
-    if root!=1 and len(nodes)==1:
-        leaf_count+=1
+for i in range(2, n + 1):
+    if len(graph[i]) == 1:  
+        leaf_count += 1
 
-print(round(W/leaf_count, 10))
+result = w / leaf_count
+print(round(result, 10))

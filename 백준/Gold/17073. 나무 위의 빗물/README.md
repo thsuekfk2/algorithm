@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 223088 KB, 시간: 708 ms
+메모리: 194748 KB, 시간: 600 ms
 
 ### 분류
 
@@ -12,11 +12,11 @@
 
 ### 제출 일자
 
-2024년 8월 16일 17:23:03
+2024년 8월 17일 15:31:19
 
 ### 문제 설명
 
-<p style="text-align: center;"><img alt="" src="" style="height: 282px; width: 300px;"><br>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/96077f22-38dc-4cab-8122-1a693bc3928f/-/preview/" style="height: 282px; width: 300px;"><br>
  </p>
 
 <p>트리란, 사이클이 없는 연결 그래프를 의미한다. 위 그림은 1번 정점을 루트로 하는 어떤 트리를 나타낸 모습이다.</p>
