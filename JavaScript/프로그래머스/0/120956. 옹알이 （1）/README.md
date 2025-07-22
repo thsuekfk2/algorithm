@@ -1,10 +1,10 @@
 # [level 0] 옹알이 (1) - 120956 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120956?gad_source=1&gad_campaignid=22799790467&gbraid=0AAAAAC_c4nD1SlvBB3klT5zZQVlikwwy1&gclid=Cj0KCQjwhO3DBhDkARIsANxrhTrgmJUE12RQEdG2sy_akNtz1Dx6tzM8EFzp2j1CnyjsEOaEPCM0Vg8aAsivEALw_wcB) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120956) 
 
 ### 성능 요약
 
-메모리: 38 MB, 시간: 14.12 ms
+메모리: 33.7 MB, 시간: 2.97 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 07월 20일 14:17:25
+2025년 07월 22일 20:09:27
 
 ### 문제 설명
 

@@ -1,31 +1,28 @@
 
-function solution(babbling) {
-  let sound = ["aya", "ye", "woo", "ma"];
+function solution(arr) {
+  let sound = ["aya", "ye", "woo", "ma"]; //네 가지 발음
   let count = 0;
 
-  for (let data of babbling) {
+  for (let data of arr) {
     let index = 0;
-    console.log("data", data);
-
-    while (index < data.length) {
-      let isValid = false;
-      for (let i = 0; i < sound.length; i++) {
-        console.log(i, sound[i], index, data.startsWith(sound[i], index));
-        if (data.startsWith(sound[i], index)) {
-          index += sound[i].length;
+    
+    while (index <= data.length) {
+        let isValid = false;
+      for (let sound_data of sound) {
+        if (data.startsWith(sound_data, index)) {
+          index += sound_data.length;
           isValid = true;
-          break;
         }
       }
       if (!isValid) {
         break;
       }
-      if (data.length === index) {
+      if (index === data.length) {
         count++;
         break;
       }
     }
   }
-  console.log("count", count);
+  console.log(count);
   return count;
 }
